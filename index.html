@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Web Components</title>
+    <link rel="stylesheet" href="./public/css/global.css">
+    <script type="module" src="./public/js/main.js"></script>
+</head>
+
+<body>
+    <dashboard-header></dashboard-header>
+
+    <main class="dashboard-container">
+        <user-card name="Mauri Andrey" role="Desarrollador Full Stack"></user-card>
+
+        <section class="tasks-section">
+            <task-item title="Diseñar interfaz"></task-item>
+            <task-item title="Integrar componentes"></task-item>
+            <task-item title="Probar funcionalidad"></task-item>
+        </section>
+
+        <progress-bar value="0"></progress-bar>
+    </main>
+</body>
+
+</html>

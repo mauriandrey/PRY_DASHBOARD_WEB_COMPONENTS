@@ -1,0 +1,5 @@
+[
+  { "title": "Diseñar interfaz", "completed": true },
+  { "title": "Integrar componentes", "completed": false },
+  { "title": "Probar funcionalidad", "completed": false }
+]
