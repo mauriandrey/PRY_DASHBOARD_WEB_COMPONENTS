@@ -1,22 +1,11 @@
 class DashboardHeader extends HTMLElement {
   constructor() {
     super();
-    this.attachShadow({ mode: 'open' });
-  }
-
-  connectedCallback() {
-    this.shadowRoot.innerHTML = `
-      <style>
-        header {
-          background: var(--primary-color);
-          color: white;
-          padding: 1rem;
-          border-radius: 10px;
-          text-align: center;
-        }
-      </style>
+    const shadow = this.attachShadow({ mode: 'open' });
+    shadow.innerHTML = `
+      <link rel="stylesheet" href="./public/components/css/dashboard-header.css">
       <header>
-        <h1>📊 Dashboard de Productividad</h1>
+        <h1> Dashboard Productividad</h1>
       </header>
     `;
   }

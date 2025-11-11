@@ -1,0 +1,31 @@
+.card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--color-card);
+  border-radius: var(--radius);
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.info h3 {
+  font-size: 1.2rem;
+  color: var(--color-text);
+}
+
+.info p {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+}

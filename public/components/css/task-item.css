@@ -1,0 +1,20 @@
+button {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  text-align: left;
+  transition: var(--transition);
+  font-size: 1rem;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+button.done {
+  background: var(--color-success);
+}

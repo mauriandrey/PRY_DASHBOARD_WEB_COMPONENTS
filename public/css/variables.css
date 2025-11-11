@@ -1,7 +1,11 @@
 :root {
-  --bg-color: #f5f7fa;
-  --text-color: #222;
-  --primary-color: #007bff;
-  --success-color: #2ecc71;
-  --font-family: "Segoe UI", sans-serif;
+  --color-bg: #f8fafc;
+  --color-card: #ffffff;
+  --color-primary: #2563eb;
+  --color-success: #16a34a;
+  --color-text: #1e293b;
+  --color-muted: #64748b;
+  --font-family: 'Inter', system-ui, sans-serif;
+  --radius: 12px;
+  --transition: all 0.3s ease;
 }

@@ -1,33 +1,15 @@
 class UserCard extends HTMLElement {
   constructor() {
     super();
-    this.attachShadow({ mode: 'open' });
-  }
-
-  connectedCallback() {
+    const shadow = this.attachShadow({ mode: 'open' });
     const name = this.getAttribute('name') || 'Usuario';
-    const role = this.getAttribute('role') || 'Rol no definido';
+    const role = this.getAttribute('role') || 'Cargo no definido';
 
-    this.shadowRoot.innerHTML = `
-      <style>
-        .card {
-          display: flex;
-          align-items: center;
-          background: white;
-          border-radius: 10px;
-          padding: 1rem;
-          box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-        }
-        img {
-          width: 60px;
-          height: 60px;
-          border-radius: 50%;
-          margin-right: 1rem;
-        }
-      </style>
+    shadow.innerHTML = `
+      <link rel="stylesheet" href="./public/components/css/user-card.css">
       <div class="card">
-        <img src="./public/assets/img/" alt="user">
-        <div>
+        <img src="./public/assets/img/user-default.png" alt="Usuario">
+        <div class="info">
           <h3>${name}</h3>
           <p>${role}</p>
         </div>
