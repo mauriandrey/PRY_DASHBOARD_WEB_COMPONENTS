@@ -1,0 +1,151 @@
+ :host {
+     display: block;
+ }
+
+ .manager-container {
+     max-width: 1000px;
+     margin: 0 auto;
+ }
+
+ h2 {
+     color: #2c3e50;
+     margin-bottom: 1.5rem;
+ }
+
+ .section-card {
+     background: white;
+     padding: 2rem;
+     border-radius: 12px;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+     margin-bottom: 2rem;
+ }
+
+ .add-section-form {
+     display: flex;
+     gap: 1rem;
+     margin-bottom: 2rem;
+ }
+
+ .add-section-form input {
+     flex: 1;
+     padding: 0.8rem;
+     border: 1px solid #ddd;
+     border-radius: 8px;
+     font-size: 1rem;
+ }
+
+ .add-section-form input[type="color"] {
+     flex: 0;
+     width: 60px;
+     height: 42px;
+     border: none;
+     cursor: pointer;
+ }
+
+ .btn {
+     padding: 0.8rem 1.5rem;
+     border: none;
+     border-radius: 8px;
+     cursor: pointer;
+     font-size: 1rem;
+     transition: all 0.2s ease;
+ }
+
+ .btn-primary {
+     background-color: #4a90e2;
+     color: white;
+ }
+
+ .btn-primary:hover {
+     background-color: #3a7bc8;
+ }
+
+ .sections-list {
+     display: grid;
+     gap: 1rem;
+ }
+
+ .section-item {
+     background: #f8f9fa;
+     padding: 1.5rem;
+     border-radius: 8px;
+     border-left: 4px solid;
+ }
+
+ .section-header {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     margin-bottom: 1rem;
+ }
+
+ .section-title {
+     font-size: 1.2rem;
+     font-weight: 600;
+     color: #2c3e50;
+ }
+
+ .btn-danger {
+     background-color: #e74c3c;
+     color: white;
+     padding: 0.5rem 1rem;
+     border: none;
+     border-radius: 6px;
+     cursor: pointer;
+     font-size: 0.9rem;
+ }
+
+ .btn-danger:hover {
+     background-color: #c0392b;
+ }
+
+ .add-task-form {
+     display: flex;
+     gap: 0.5rem;
+     margin-bottom: 1rem;
+ }
+
+ .add-task-form input {
+     flex: 1;
+     padding: 0.6rem;
+     border: 1px solid #ddd;
+     border-radius: 6px;
+     font-size: 0.9rem;
+ }
+
+ .btn-success {
+     background-color: #50c878;
+     color: white;
+     padding: 0.6rem 1rem;
+     border: none;
+     border-radius: 6px;
+     cursor: pointer;
+     font-size: 0.9rem;
+ }
+
+ .btn-success:hover {
+     background-color: #45b369;
+ }
+
+ .tasks-list {
+     margin-top: 1rem;
+ }
+
+ .task-row {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 0.8rem;
+     background: white;
+     margin-bottom: 0.5rem;
+     border-radius: 6px;
+ }
+
+ .task-text {
+     color: #2c3e50;
+ }
+
+ .btn-small {
+     padding: 0.4rem 0.8rem;
+     font-size: 0.85rem;
+ }

@@ -1,20 +1,55 @@
-button {
-  width: 100%;
-  padding: 0.9rem 1rem;
-  background: var(--color-primary);
-  color: white;
-  border: none;
-  border-radius: var(--radius);
-  cursor: pointer;
-  text-align: left;
-  transition: var(--transition);
-  font-size: 1rem;
-}
+ :host {
+   display: block;
+   margin-bottom: 0.5rem;
+ }
 
-button:hover {
-  background: #1d4ed8;
-}
+ .task-item {
+   display: flex;
+   align-items: center;
+   padding: 1rem;
+   background-color: white;
+   border-radius: 8px;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+   transition: transform 0.2s ease;
+ }
 
-button.done {
-  background: var(--color-success);
-}
+ .task-item:hover {
+   transform: translateX(5px);
+ }
+
+ .task-item.completed {
+   opacity: 0.7;
+ }
+
+ .task-checkbox {
+   width: 20px;
+   height: 20px;
+   margin-right: 1rem;
+   cursor: pointer;
+ }
+
+ .task-text {
+   flex: 1;
+   font-size: 1rem;
+   color: #2c3e50;
+ }
+
+ .task-text.completed {
+   text-decoration: line-through;
+   color: #95a5a6;
+ }
+
+ .delete-btn {
+   padding: 0.5rem 1rem;
+   background-color: #e74c3c;
+   color: white;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   font-size: 0.9rem;
+   transition: background-color 0.2s ease;
+ }
+
+ .delete-btn:hover {
+   background-color: #c0392b;
+ }
