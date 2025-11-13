@@ -10,20 +10,44 @@ header {
 }
 
 .header-content {
-  max-width: 1200px;
+  max-width: auto;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 2rem;
 }
 
 h1 {
   margin: 0;
   font-size: 1.8rem;
   font-weight: 600;
+  transition: font-size 0.3s ease;
 }
 
 .date-time {
   font-size: 0.9rem;
   opacity: 0.9;
+  white-space: nowrap;
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 1.4rem;
+  }
+  
+  .date-time {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 1rem 1.5rem;
+  }
+  
+  h1 {
+    font-size: 1.2rem;
+  }
 }

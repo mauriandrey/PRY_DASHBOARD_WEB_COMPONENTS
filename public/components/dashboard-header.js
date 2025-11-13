@@ -11,7 +11,7 @@ export class DashboardHeader extends HTMLElement {
         <link rel="stylesheet" href="./public/components/css/dashboard-header.css">
             <header>
                 <div class="header-content">
-                    <h1>Dashboard - Task Manager</h1>
+                    <h1 id="headerTitle">Task Manager</h1>
                     <div class="date-time" id="datetime"></div>
                 </div>
             </header>
@@ -20,6 +20,31 @@ export class DashboardHeader extends HTMLElement {
         // Actualizar fecha y hora
         this.updateDateTime();
         setInterval(() => this.updateDateTime(), 1000);
+        
+        // Observar cambios en el sidebar
+        this.observeSidebarChanges();
+    }
+    
+    // Método para observar cambios en el sidebar
+    observeSidebarChanges() {
+        // Esperar a que el DOM esté listo
+        setTimeout(() => {
+            const sidebar = document.querySelector('.sidebar');
+            const headerTitle = this.shadowRoot.getElementById('headerTitle');
+            
+            if (sidebar) {
+                // Detectar cambios en las clases del sidebar
+                const observer = new MutationObserver(() => {
+                    if (sidebar.classList.contains('collapsed')) {
+                        headerTitle.textContent = 'TM';
+                    } else {
+                        headerTitle.textContent = 'Task Manager';
+                    }
+                });
+                
+                observer.observe(sidebar, { attributes: true, attributeFilter: ['class'] });
+            }
+        }, 100);
     }
     
     // Método para actualizar la fecha y hora

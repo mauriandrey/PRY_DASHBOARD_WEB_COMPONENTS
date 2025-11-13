@@ -1,33 +1,58 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Task Manager</title>
+    <title>Task Manager</title>
     <link rel="stylesheet" href="./public/css/variables.css">
     <link rel="stylesheet" href="./public/css/global.css">
 </head>
+
 <body>
     <!-- Contenedor principal del dashboard -->
     <div id="app">
         <dashboard-header></dashboard-header>
-        
         <div class="main-container">
             <!-- Menu lateral izquierdo -->
-            <button class="sidebar-toggle" id="toggleSidebar">✕</button>
             <nav class="sidebar">
+                <div class="sidebar-header">
+                    <button class="sidebar-toggle" id="toggleSidebar" title="Contraer/Expandir menú">
+                        <img src="./public/assets/icons/close.svg" alt="Toggle menu" class="toggle-icon">
+                    </button>
+                    <h2 class="sidebar-title">Task Manager</h2>
+                </div>
                 <ul class="menu-list">
-                    <li><button class="menu-item active" data-section="home">Inicio</button></li>
-                    <li><button class="menu-item" data-section="profile">Perfil de Usuario</button></li>
-                    <li><button class="menu-item" data-section="tasks">Tasks</button></li>
-                    <li><button class="menu-item" data-section="task-manager">Task Manager</button></li>
-                    
+                    <li>
+                        <button class="menu-item active" data-section="home">
+                            <img src="./public/assets/icons/home.svg" alt="Home" class="menu-icon">
+                            <span class="menu-label">Home</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="menu-item" data-section="profile">
+                            <img src="./public/assets/icons/user.svg" alt="user profile" class="menu-icon">
+                            <span class="menu-label">User Profile</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="menu-item" data-section="tasks">
+                            <img src="./public/assets/icons/tasks.svg" alt="Tasks" class="menu-icon">
+                            <span class="menu-label">Tasks</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="menu-item" data-section="task-manager">
+                            <img src="./public/assets/icons/task-manager.svg" alt="Task Manager" class="menu-icon">
+                            <span class="menu-label">Task Manager</span>
+                        </button>
+                    </li>
                 </ul>
             </nav>
 
-            <!-- Contenido principal que cambia según la sección -->
+            <!-- Contenido principal que cambia segun la seccion -->
             <main class="content-area" id="content">
-                <!-- El contenido se cargará dinámicamente aquí -->
+                <!-- El contenido se cargara dinamicamente aqui -->
             </main>
         </div>
     </div>
@@ -35,4 +60,5 @@
     <!-- Importar el archivo principal de JavaScript como modulo -->
     <script type="module" src="./public/js/main.js"></script>
 </body>
+
 </html>

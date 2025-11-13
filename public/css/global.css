@@ -25,30 +25,27 @@ body {
     position: relative;
 }
 
-/* Botón para toggle del sidebar */
+/* Botón para toggle del sidebar (inline dentro del header) */
 .sidebar-toggle {
-    position: fixed;
-    top: 80px;
-    left: 10px;
-    z-index: 1001;
-    width: 40px;
-    height: 40px;
-    background-color: var(--primary-color);
-    color: white;
+    background: none;
     border: none;
-    border-radius: 8px;
+    color: var(--text-light);
     cursor: pointer;
-    font-size: 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: var(--shadow-md);
+    padding: 0.25rem 0.5rem;
     transition: var(--transition-fast);
 }
 
 .sidebar-toggle:hover {
-    background-color: #3a7bc8;
-    transform: scale(1.1);
+    color: var(--primary-color);
+}
+
+.toggle-icon {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
 }
 
 /* Estilos del sidebar */ 
@@ -59,16 +56,93 @@ body {
     width: 250px;
     height: calc(100vh - 70px);
     background-color: var(--bg-dark);
-    padding: var(--spacing-md);
+    padding: 0;
     box-shadow: var(--shadow-md);
     z-index: 1000;
     transition: transform 0.3s ease;
     overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header del sidebar */
+.sidebar-header {
+    padding: var(--spacing-md);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: var(--spacing-md);
+}
+
+.sidebar-title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-light);
+    text-align: center;
+    margin: 0;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    flex: 1;
+}
+
+.collapse-btn {
+    background: none;
+    border: none;
+    color: var(--text-light);
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-fast);
+}
+
+.collapse-btn:hover {
+    color: var(--primary-color);
+}
+
+.collapse-icon {
+    width: 18px;
+    height: 18px;
+    stroke: currentColor;
 }
 
 /* Estado oculto del sidebar */
 .sidebar.hidden {
     transform: translateX(-100%);
+}
+
+/* Sidebar contraído (solo iconos) */
+.sidebar.collapsed {
+    width: 80px;
+}
+
+.sidebar.collapsed .sidebar-header {
+    padding: var(--spacing-sm);
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.sidebar.collapsed .sidebar-title {
+    font-size: 0.6rem;
+    padding: var(--spacing-xs);
+    line-height: 1.2;
+}
+
+.sidebar.collapsed .menu-label {
+    display: none;
+}
+
+.sidebar.collapsed .menu-item {
+    padding: var(--spacing-md);
+    justify-content: center;
+}
+
+.sidebar.collapsed .toggle-btn-sidebar {
+    width: 100%;
+    padding: var(--spacing-md);
+    justify-content: center;
 }
 
 /* Ajustar contenido cuando el sidebar esta visible */
@@ -85,22 +159,34 @@ body {
     margin-left: 0;
 }
 
+/* Ajustar contenido cuando el sidebar está contraído */
+.sidebar.collapsed ~ .content-area {
+    margin-left: 80px;
+}
+
 .menu-list {
     list-style: none;
+    padding: 0;
+    margin: 0;
+    flex: 1;
 }
 
 .menu-item {
     width: 100%;
-    padding: var(--spacing-sm);
-    margin-bottom: var(--spacing-xs);
+    padding: var(--spacing-md);
+    margin: 0;
     background-color: transparent;
     color: var(--text-light);
     border: none;
-    border-radius: var(--border-radius-sm);
+    border-left: 3px solid transparent;
+    border-radius: 0;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 0.95rem;
     text-align: left;
     transition: var(--transition-fast);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
 }
 
 .menu-item:hover {
@@ -108,8 +194,25 @@ body {
 }
 
 .menu-item.active {
-    background-color: var(--primary-color);
-    font-weight: bold;
+    background-color: rgba(58, 123, 200, 0.2);
+    border-left-color: var(--primary-color);
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.menu-icon {
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    flex-shrink: 0;
+    stroke: currentColor;
+    fill: none;
+}
+
+.menu-label {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* Estilos para botones generales */

@@ -15,19 +15,17 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Inicializar datos
     await initializeDefaultData();
 
-    // Configurar navegación del menú
-    document.querySelectorAll('.menu-item').forEach(item => {
-        item.addEventListener('click', (e) => {
-            const section = e.target.dataset.section;
-            navigateToSection(section);
-        });
+    // Configurar navegación del menú - usar delegación de eventos
+    document.addEventListener('click', (e) => {
+        const menuItem = e.target.closest('.menu-item');
+        if (menuItem) {
+            const section = menuItem.getAttribute('data-section');
+            if (section) {
+                navigateToSection(section);
+            }
+        }
     });
 
-    // Configurar botón de toggle del sidebar
-    const toggleBtn = document.getElementById('toggleSidebar');
-    if (toggleBtn) {
-        toggleBtn.addEventListener('click', toggleSidebar);
-    }
 
     // Cargar la sección de inicio por defecto
     navigateToSection('home');
