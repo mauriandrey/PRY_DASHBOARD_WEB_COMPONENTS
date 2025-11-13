@@ -63,5 +63,5 @@ Nota: en muchos navegadores abrir `index.html` directamente puede funcionar, per
 - Sigue el formato existente de componentes y evita romper la API pública de los Custom Elements.
 
 **Licencia**
-- Este repositorio no incluye una licencia explícita. Añade `LICENSE` si quieres permitir usos específicos.
+- Este repositorio no incluye una licencia explícita.
 
