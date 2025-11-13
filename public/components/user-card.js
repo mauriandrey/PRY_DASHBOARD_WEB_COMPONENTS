@@ -1,8 +1,7 @@
 // Web Component para el perfil del usuario
-
 import { getLocalStorage, setLocalStorage, calculateAge, calculateProgress } from '../js/utils/helpers.js';
 
-class UserCard extends HTMLElement {
+export class UserCard extends HTMLElement {
     constructor() {
         super();
         

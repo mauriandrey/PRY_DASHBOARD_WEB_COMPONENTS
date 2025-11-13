@@ -1,5 +1,12 @@
 [
-  { "title": "Diseñar interfaz", "completed": true },
-  { "title": "Integrar componentes", "completed": false },
-  { "title": "Probar funcionalidad", "completed": false }
+  {
+    "id": "estudio",
+    "name": "Estudio",
+    "color": "#4a90e2"
+  },
+  {
+    "id": "gym",
+    "name": "Gym",
+    "color": "#e74c3c"
+  }
 ]

@@ -2,7 +2,7 @@
 
 import { getLocalStorage, setLocalStorage, generateId } from '../js/utils/helpers.js';
 
-class TaskManager extends HTMLElement {
+export class TaskManager extends HTMLElement {
     constructor() {
         super();
         

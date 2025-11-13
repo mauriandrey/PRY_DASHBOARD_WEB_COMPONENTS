@@ -22,14 +22,67 @@ body {
 .main-container {
     display: flex;
     flex: 1;
+    position: relative;
 }
 
-/* Estilos del sidebar (menú lateral) */
+/* Botón para toggle del sidebar */
+.sidebar-toggle {
+    position: fixed;
+    top: 80px;
+    left: 10px;
+    z-index: 1001;
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-fast);
+}
+
+.sidebar-toggle:hover {
+    background-color: #3a7bc8;
+    transform: scale(1.1);
+}
+
+/* Estilos del sidebar */ 
 .sidebar {
+    position: fixed;
+    left: 0;
+    top: 70px;
     width: 250px;
+    height: calc(100vh - 70px);
     background-color: var(--bg-dark);
     padding: var(--spacing-md);
     box-shadow: var(--shadow-md);
+    z-index: 1000;
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+}
+
+/* Estado oculto del sidebar */
+.sidebar.hidden {
+    transform: translateX(-100%);
+}
+
+/* Ajustar contenido cuando el sidebar esta visible */
+.content-area {
+    margin-left: 250px;
+    flex: 1;
+    padding: var(--spacing-lg);
+    overflow-y: auto;
+    transition: margin-left 0.3s ease;
+}
+
+/* Ajustar contenido cuando el sidebar esta oculto */
+.sidebar.hidden ~ .content-area {
+    margin-left: 0;
 }
 
 .menu-list {
@@ -57,13 +110,6 @@ body {
 .menu-item.active {
     background-color: var(--primary-color);
     font-weight: bold;
-}
-
-/* Área de contenido principal */
-.content-area {
-    flex: 1;
-    padding: var(--spacing-lg);
-    overflow-y: auto;
 }
 
 /* Estilos para botones generales */
@@ -112,3 +158,19 @@ body {
 .mt-2 { margin-top: var(--spacing-md); }
 .mb-1 { margin-bottom: var(--spacing-sm); }
 .mb-2 { margin-bottom: var(--spacing-md); }
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
+    
+    .content-area {
+        margin-left: 0;
+        padding: var(--spacing-sm);
+    }
+    
+    .sidebar-toggle {
+        display: flex;
+    }
+}

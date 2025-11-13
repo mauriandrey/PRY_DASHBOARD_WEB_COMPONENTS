@@ -1,8 +1,9 @@
 // Web Component para marcar tareas como completadas
 
 import { getLocalStorage, setLocalStorage } from '../js/utils/helpers.js';
+import {ProgressIndicator} from './progress-indicator.js';
 
-class TaskList extends HTMLElement {
+export class TaskList extends HTMLElement {
     constructor() {
         super();
         
@@ -76,15 +77,16 @@ class TaskList extends HTMLElement {
                     `).join('') : '<p style="text-align: center; color: #7f8c8d;">No hay tareas en esta seccion</p>'}
                 </div>
                 
-                <div class="progress-indicator">
-                    <div class="progress-text">Progreso: ${Math.round(progressPercentage)}%</div>
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: ${progressPercentage}%"></div>
-                    </div>
-                </div>
+                <progress-indicator data-progress="${progressPercentage}"></progress-indicator>
             `;
             
             this.sectionsGrid.appendChild(sectionCard);
+            
+            // Inicializar el componente progress-indicator
+            const progressIndicator = sectionCard.querySelector('progress-indicator');
+            if (progressIndicator) {
+                progressIndicator.setProgress(progressPercentage);
+            }
         });
         
         // Agregar event listeners a los checkboxes

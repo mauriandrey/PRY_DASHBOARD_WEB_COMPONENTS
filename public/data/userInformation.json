@@ -1,0 +1,6 @@
+{
+    "nombre": "Usuario",
+    "apellido": "Ejemplo",
+    "fechaNacimiento": "2000-01-01",
+    "fotoPerfil": "./public/assets/img/user-default.png"
+}

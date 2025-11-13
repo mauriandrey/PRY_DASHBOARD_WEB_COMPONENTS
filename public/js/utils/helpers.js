@@ -1,4 +1,4 @@
-// Funciones auxiliares para el manejo de LocalStorage y utilidades
+// Funciones auxiliares para el manejo de LocalStorage, JSON y utilidades
 
 // Guardar datos en LocalStorage
 export const setLocalStorage = (key, value) => {
@@ -18,6 +18,20 @@ export const getLocalStorage = (key) => {
         return item ? JSON.parse(item) : null;
     } catch (error) {
         console.error('Error al leer LocalStorage:', error);
+        return null;
+    }
+};
+
+// Cargar datos desde archivo JSON
+export const loadJSON = async (filepath) => {
+    try {
+        const response = await fetch(filepath);
+        if (!response.ok) {
+            throw new Error(`Error al cargar ${filepath}`);
+        }
+        return await response.json();
+    } catch (error) {
+        console.error('Error al cargar JSON:', error);
         return null;
     }
 };

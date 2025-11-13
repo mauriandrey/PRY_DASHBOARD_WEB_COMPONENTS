@@ -1,6 +1,6 @@
 // Web Component para representar una tarea individual
 
-class TaskItem extends HTMLElement {
+export class TaskItem extends HTMLElement {
     constructor() {
         super();
         

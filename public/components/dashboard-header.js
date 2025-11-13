@@ -1,6 +1,5 @@
 // Web Component para el encabezado del dashboard
-
-class DashboardHeader extends HTMLElement {
+export class DashboardHeader extends HTMLElement {
     constructor() {
         super();
         

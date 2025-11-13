@@ -106,30 +106,3 @@ h2 {
     font-size: 1.1rem;
     margin-bottom: 1rem;
 }
-
-.progress-indicator {
-    margin-top: 1rem;
-    padding: 1rem;
-    background: #ecf0f1;
-    border-radius: 8px;
-}
-
-.progress-bar {
-    height: 8px;
-    background: #e0e0e0;
-    border-radius: 4px;
-    overflow: hidden;
-    margin-top: 0.5rem;
-}
-
-.progress-fill {
-    height: 100%;
-    background: #50c878;
-    transition: width 0.3s ease;
-}
-
-.progress-text {
-    font-size: 0.9rem;
-    color: #7f8c8d;
-    text-align: center;
-}

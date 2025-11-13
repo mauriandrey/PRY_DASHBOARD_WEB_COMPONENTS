@@ -1,6 +1,5 @@
 // Web Component para mostrar barras de progreso
-
-class ProgressBar extends HTMLElement {
+export class ProgressBar extends HTMLElement {
     constructor() {
         super();
         
