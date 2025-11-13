@@ -1,28 +1,67 @@
 # PRY_DASHBOARD_WEB_COMPONENTS
-Dashboard con componentes reutilizables (&lt;user-card>, &lt;task-item>, &lt;progress-bar>).
+Dashboard modular construido con Web Components (Custom Elements + Shadow DOM).
 
-# Proyecto: Dashboard Web Components
+**Autor:** mauriandrey
 
-**Autor:** Tu nombre  
-**Materia:** Programación Integrativa de Componentes Web  
+**Descripción breve**
+Este repositorio contiene un conjunto de componentes web reutilizables que forman un pequeño dashboard de gestión de tareas. El proyecto está desarrollado con JavaScript nativo (ES Modules) y componentes web (Shadow DOM) sin frameworks.
 
-## Descripción
-Este proyecto implementa un dashboard modular usando **Web Components**, aplicando los conceptos de:
-- Custom Elements  
-- Shadow DOM  
-- HTML Templates  
-- ES Modules  
+**Dónde empezar**
+- **Archivo principal:** `index.html` — punto de entrada de la UI.
+- **Carpeta pública:** `public/` — contiene los componentes, estilos, scripts y assets.
 
-## Componentes principales
-- `<dashboard-header>` → Encabezado principal del sistema.
-- `<user-card>` → Muestra la información del usuario.
-- `<task-item>` → Representa una tarea individual.
-- `<progress-bar>` → Calcula y muestra el progreso total.
+**Estructura principal**
+- `public/components/` : Web Components y sus estilos.
+- `public/css/` : estilos globales y variables.
+- `public/js/` : lógica de la aplicación (servicios, utilidades, inicializadores).
+- `public/assets/icons/` : iconos SVG usados en el menú y botones.
+- `data/` : JSON de ejemplo para tareas y secciones.
 
-## Ejecución
-1. Abrir `index.html` en un navegador.
-2. No requiere servidor; todo es JS nativo (sin frameworks).
-3. Cada tarea se puede marcar como completada y la barra de progreso se actualiza.
+**Componentes incluidos**
+- `dashboard-header` — encabezado con fecha y título (ajusta el título cuando el sidebar se contrae).
+- `task-manager` — UI para crear/editar secciones y tareas.
+- `task-list`, `task-item` — listado y representación de tareas.
+- `user-card` — tarjeta de información del usuario.
+- `progress-bar`, `progress-indicator` — visualización del progreso.
 
-## Créditos
-Plantilla desarrollada por ChatGPT + [Tu nombre].
+**Qué hace el proyecto**
+- Menú lateral con iconos y modo contraído (solo iconos).
+- Crear / eliminar secciones y añadir tareas por sección.
+- Marca tareas como completadas y calcula progreso.
+- Componentes encapsulados con Shadow DOM para estilos aislados.
+
+**Ejecutar localmente**
+Por soporte de ES Modules y seguridad de los navegadores es recomendable servir el proyecto desde un servidor local. Opciones rápidas:
+
+- Con Python 3 (PowerShell):
+```
+python -m http.server 8000
+```
+
+- Con `http-server` (Node.js, si tienes `npm`):
+```
+npx http-server -c-1
+```
+
+Luego abrir en el navegador `http://localhost:8000` (o el puerto que hayas elegido).
+
+Nota: en muchos navegadores abrir `index.html` directamente puede funcionar, pero al usar ES Modules y rutas relativas algunos recursos pueden bloquearse por política de CORS.
+
+**Personalizar / desarrollo**
+- Cambiar estilos globales en `public/css/variables.css` y `public/css/global.css`.
+- Modificar comportamiento del sidebar en `public/js/services/sidebarManager.js`.
+- Los iconos SVG están en `public/assets/icons/` y se usan como imágenes `img` en los botones. Puedes reemplazarlos por tus propios SVG manteniendo el mismo nombre o actualizando la ruta.
+
+**Pruebas manuales rápidas**
+- Abrir la app y verificar:
+	- El menú lateral se contrae/expande con el botón en el header.
+	- Los botones de `task-manager` usan iconos (agregar/eliminar).
+	- El título del `dashboard-header` cambia a `TM` cuando el sidebar está contraído.
+
+**Contribuir**
+- Fork + PR: crea una rama con tu cambio y abre un Pull Request.
+- Sigue el formato existente de componentes y evita romper la API pública de los Custom Elements.
+
+**Licencia**
+- Este repositorio no incluye una licencia explícita. Añade `LICENSE` si quieres permitir usos específicos.
+
