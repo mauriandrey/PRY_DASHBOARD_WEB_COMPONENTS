@@ -25,9 +25,9 @@ export class DashboardHeader extends HTMLElement {
         this.observeSidebarChanges();
     }
     
-    // Método para observar cambios en el sidebar
+    // Metodo para observar cambios en el sidebar
     observeSidebarChanges() {
-        // Esperar a que el DOM esté listo
+        // Esperar a que el DOM este listo
         setTimeout(() => {
             const sidebar = document.querySelector('.sidebar');
             const headerTitle = this.shadowRoot.getElementById('headerTitle');
@@ -36,7 +36,7 @@ export class DashboardHeader extends HTMLElement {
                 // Detectar cambios en las clases del sidebar
                 const observer = new MutationObserver(() => {
                     if (sidebar.classList.contains('collapsed')) {
-                        headerTitle.textContent = 'TM';
+                        headerTitle.textContent = 'Task Manager';
                     } else {
                         headerTitle.textContent = 'Task Manager';
                     }

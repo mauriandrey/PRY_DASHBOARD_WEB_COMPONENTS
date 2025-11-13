@@ -86,7 +86,7 @@
  }
 
  .btn-danger {
-     background-color: #e74c3c;
+     background-color: #e96152;
      color: white;
      padding: 0.5rem 1rem;
      border: none;
@@ -148,4 +148,58 @@
  .btn-small {
      padding: 0.4rem 0.8rem;
      font-size: 0.85rem;
+ }
+
+ /* Estilos para botones con iconos */
+ .icon-btn {
+     padding: 0.5rem;
+     background-color: transparent;
+     border: none;
+     cursor: pointer;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     border-radius: 6px;
+     transition: all 0.2s ease;
+ }
+
+ .icon-btn.btn-primary {
+     background-color: #4a90e2;
+     color: white;
+ }
+
+ .icon-btn.btn-primary:hover {
+     background-color: #3a7bc8;
+ }
+
+ .icon-btn.btn-success {
+     background-color: #50c878;
+     color: white;
+ }
+
+ .icon-btn.btn-success:hover {
+     background-color: #45b369;
+ }
+
+ .icon-btn.btn-danger {
+     background-color: #e74c3c;
+     color: white;
+ }
+
+ .icon-btn.btn-danger:hover {
+     background-color: #c0392b;
+ }
+
+ .icon-img {
+     width: 24px;
+     height: 24px;
+     stroke: currentColor;
+     fill: none;
+ }
+
+ .icon-img-small {
+     width: 18px;
+     height: 18px;
+     stroke: currentColor;
+     fill: none;
  }

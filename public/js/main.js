@@ -1,4 +1,4 @@
-// Importar todos los componentes usando ES Modules
+// Importar todos los componentes 
 import '../components/index.js';
 
 // Importar servicios

@@ -18,7 +18,9 @@ export class TaskManager extends HTMLElement {
                     <div class="add-section-form">
                         <input type="text" id="sectionName" placeholder="Nombre de la seccion">
                         <input type="color" id="sectionColor" value="#4a90e2">
-                        <button class="btn btn-primary" id="addSectionBtn">Crear Seccion</button>
+                        <button class="btn btn-primary icon-btn" id="addSectionBtn" title="Crear sección">
+                            <img src="./public/assets/icons/plus.svg" alt="Crear sección" class="icon-img">
+                        </button>
                     </div>
                 </div>
                 
@@ -57,19 +59,25 @@ export class TaskManager extends HTMLElement {
             sectionEl.innerHTML = `
                 <div class="section-header">
                     <div class="section-title">${section.name}</div>
-                    <button class="btn-danger btn-small" data-section-id="${section.id}">Eliminar Seccion</button>
+                    <button class="btn-danger btn-small icon-btn" data-section-id="${section.id}" title="Eliminar sección">
+                        <img src="./public/assets/icons/trash.svg" alt="Eliminar" class="icon-img-small">
+                    </button>
                 </div>
                 
                 <div class="add-task-form">
                     <input type="text" placeholder="Nueva tarea" data-input-section="${section.id}">
-                    <button class="btn-success" data-add-task="${section.id}">Agregar Tarea</button>
+                    <button class="btn-success icon-btn" data-add-task="${section.id}" title="Agregar tarea">
+                        <img src="./public/assets/icons/plus.svg" alt="Agregar tarea" class="icon-img">
+                    </button>
                 </div>
                 
                 <div class="tasks-list" data-tasks-section="${section.id}">
                     ${sectionTasks.map(task => `
                         <div class="task-row">
                             <span class="task-text">${task.text}</span>
-                            <button class="btn-danger btn-small" data-delete-task="${task.id}" data-task-section="${section.id}">Eliminar</button>
+                            <button class="btn-danger btn-small icon-btn" data-delete-task="${task.id}" data-task-section="${section.id}" title="Eliminar tarea">
+                                <img src="./public/assets/icons/trash.svg" alt="Eliminar" class="icon-img-small">
+                            </button>
                         </div>
                     `).join('')}
                 </div>
