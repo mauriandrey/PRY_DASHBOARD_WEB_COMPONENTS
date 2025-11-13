@@ -1,17 +1,17 @@
 /* Variables globales para colores y espaciado */
 :root {
     /* Colores principales */
-    --primary-color: #4a90e2;
-    --secondary-color: #50c878;
-    --danger-color: #e74c3c;
-    --warning-color: #f39c12;
-    --dark-color: #2c3e50;
-    --light-color: #ecf0f1;
+    --primary-color: #7c3aed;
+    --secondary-color: #06b6d4;
+    --danger-color: #ef4444;
+    --warning-color: #f97316;
+    --dark-color: #3c1b4b;
+    --light-color: #f3e8ff;
     
     /* Colores de fondo */
-    --bg-primary: #ffffff;
-    --bg-secondary: #f8f9fa;
-    --bg-dark: #2c3e50;
+    --bg-primary: #faf5ff;
+    --bg-secondary: #e8ecff;
+    --bg-dark: #2d1b3d;
     
     /* Colores de texto */
     --text-primary: #2c3e50;

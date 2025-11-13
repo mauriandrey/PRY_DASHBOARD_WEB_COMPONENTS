@@ -1,6 +1,5 @@
 /* Reset básico y estilos globales */
 * {
-    background-color: var(--bg-dark);
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -40,22 +39,24 @@ body {
 }
 
 .sidebar-toggle:hover {
-    color: var(--primary-color);
+    color: #a78bfa;
 }
 
 .toggle-icon {
     width: 20px;
     height: 20px;
-    stroke: currentColor;
+    stroke: white !important;
+    color: white !important;
+    filter: brightness(0) invert(1);
 }
 
 /* Estilos del sidebar */ 
 .sidebar {
     position: fixed;
     left: 0;
-    top: 70px;
+    top: 0;
     width: 250px;
-    height: calc(100vh - 70px);
+    height: calc(100vh - 0px);
     background-color: var(--bg-dark);
     padding: 0;
     box-shadow: var(--shadow-md);
@@ -195,10 +196,10 @@ body {
 }
 
 .menu-item.active {
-    background-color: rgba(58, 123, 200, 0.2);
-    border-left-color: var(--primary-color);
+    background-color: rgba(124, 58, 237, 0.2);
+    border-left-color: #7c3aed;
     font-weight: 600;
-    color: var(--primary-color);
+    color: #7c3aed;
 }
 
 .menu-icon {
@@ -206,8 +207,10 @@ body {
     height: 20px;
     min-width: 20px;
     flex-shrink: 0;
-    stroke: currentColor;
-    fill: none;
+    stroke: white !important;
+    fill: none !important;
+    color: white !important;
+    filter: brightness(0) invert(1);
 }
 
 .menu-label {
@@ -232,7 +235,7 @@ body {
 }
 
 .btn-primary:hover {
-    background-color: #3a7bc8;
+    background-color: #6d28d9;
 }
 
 .btn-success {
@@ -241,7 +244,7 @@ body {
 }
 
 .btn-success:hover {
-    background-color: #45b369;
+    background-color: #0891b2;
 }
 
 .btn-danger {
